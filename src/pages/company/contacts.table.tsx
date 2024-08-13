@@ -10,28 +10,18 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Input, Select, Space, Table } from "antd";
-
 import { statusOptions } from "@/constants";
 import { COMPANY_CONTACTS_TABLE_QUERY } from "@/graphql/queries";
-
 import { CompanyContactsTableQuery } from "@/graphql/types";
 import { Text } from "@/components/text";
 import CustomAvatar from "@/components/custom-avatar";
 import { ContactStatusTag } from "@/components/tags/contact.status-tags";
-import { Contact } from "@/graphql/schema.types";
 
-// type Contact = GetFieldsFromList<CompanyContactsTableQuery>;
+type Contact = GetFieldsFromList<CompanyContactsTableQuery>;
 
 export const CompanyContactsTable = () => {
   // get params from the url
   const params = useParams();
-
-  /**
-   * Refine offers a TanStack Table adapter with @refinedev/react-table that allows us to use the TanStack Table library with Refine.
-   * All features such as sorting, filtering, and pagination come out of the box
-   * Under the hood it uses useList hook to fetch the data.
-   * https://refine.dev/docs/packages/tanstack-table/use-table/#installation
-   */
   const { tableProps } = useTable<Contact>({
     // specify the resource for which the table is to be used
     resource: "contacts",

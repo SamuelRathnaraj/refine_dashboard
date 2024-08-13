@@ -1,4 +1,4 @@
-import React from 'react'
+
 import CustomAvatar from '../custom-avatar';
 import { Text } from '../text';
 
@@ -8,7 +8,7 @@ type Props={
     shape?:'circle' | 'square';
 }
 
-const SelectOptionWithAvatar = ({avatarUrl, name, shape}) => {
+const SelectOptionWithAvatar = ({avatarUrl, name, shape}: Props) => {
   return (
     <div
     style={{
@@ -16,7 +16,7 @@ const SelectOptionWithAvatar = ({avatarUrl, name, shape}) => {
         alignItems:'center',
         gap:'8px'
     }}>
-        <CustomAvatar shape='shape' name={name}  src={avatarUrl}/>
+        <CustomAvatar shape={shape} name={name}  src={avatarUrl}/>
         <Text>
             {name}
         </Text>

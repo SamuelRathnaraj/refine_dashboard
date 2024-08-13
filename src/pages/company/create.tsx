@@ -67,9 +67,8 @@ const Create = () => {
                         value: user.id,
                         label:(
                             <SelectOptionWithAvatar
-                            name={user.name}
-                            avatarUrl={user.avatarUrl??undefined}
-                            />
+                                name={user.name}
+                                avatarUrl={user.avatarUrl ?? undefined} shape={undefined}                            />
                         )
                     })) ?? []
                 }>
